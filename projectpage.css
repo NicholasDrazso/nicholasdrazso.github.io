@@ -71,7 +71,7 @@ nav ul li a:hover::after{
 
 .section {
     margin-left: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 .list-contents ol li{
@@ -108,9 +108,45 @@ nav ul li a:hover::after{
     background: #8c52ff;
 }
 
+#portfolio{
+    padding: 25px 0;
+}
 
+.container{
+    padding: 10px 2%;
+}
 
+.pinball-list{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(1, minmax(200px, 1fr));
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
+.work{
+    position: relative;
+    overflow: hidden;
+ }
+
+h3{
+    color: #fff;
+    margin-left: 10px;
+}
+
+.pics{
+    color: #fff;
+}
+
+.work-words {
+    margin-left: 10px;
+    color: #fff;
+}
+
+.img{
+    width: 100%;
+}
 
 
 

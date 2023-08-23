@@ -172,6 +172,14 @@ nav ul li a:hover::after{
     margin-top: 50px;
 }
 
+.pinball-list{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, minmax(200px, 1fr));
+    margin-top: 50px;
+}
+
 .work{
    border-radius: 10px;
    position: relative;

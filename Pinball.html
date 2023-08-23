@@ -24,20 +24,248 @@
     </div>
 
     <div id="words">
+        
         <div class="section">
-            <h1 class="title">Pinball Machine</h1>
+            <h1 class="title">Pinball Machine aka Solar Flare</h1>
             <p>
-            This is a multi gamemode autonomous pinball machine. A further write up is in process, for now you can download the report below.
+                This is a multi gamemode autonomous pinball machine. For videos of the final product and to download the report, scroll to the bottom.
             </p>
-
-            <img class="resize" src="images/Pinball/Pinball Cover.jpg">
-
+            <p>
+                This is the project that made me fall in love with the engineering process. The highs, lows, failures, 
+                successes, late nights, and struggles all led to completing the project. The best part was that is was 
+                with 2 great friends and that we were able to pull this off in such a short time period. There was no 
+                manual on how to do this, we just started. It was through the failures which we learned the most. This 
+                project taught me that the simple design is usually the best. Now that I am writing this 4 years later, 
+                I am realizing that without the proper team, this would not have been possible so moving forward, 
+                I understand that having the right people on the team is so much more important than what the team 
+                necessarily knows technically.
+            </p>
         </div>
     
+        <div id="portfolio">
+            <div class="container">
+
+                <h2 class="title">Ball Launch Mechanism</h2>
+
+                The ball launch mechanism was a roller coaster of emotions. It took alot of testing to get the gear ratio 
+                correct and the spacing correct for the ball to get projected out properly. The idea was to replicate a 
+                gear box and a fly wheel. The code made the motor ramp up in speed over a small amount of time. I decided 
+                to leave the audio in just to convey the emotions we went through even through there is swearing so I 
+                apologize.
+
+                <div class="pinball-list">
+        
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/Ball launch 1.MOV"></video>
+                        <h3>1st Attempt</h3>
+                        <p class="work-words">Motor was too small and the small gears were too small</p>
+                    </div>
+
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/Ball launch 2.MOV"></video>
+                        <h3>2nd Attempt</h3>
+                        <p class="work-words">Increased motor size but gear ratio is still incorrect</p>
+                    </div>
+        
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/Ball launch 3.MOV"></video>
+                        <h3>3rd Attempt</h3>
+                        <p class="work-words">Kept large motor and increased size of gears but only ran at 5% power</p>
+                    </div>
+        
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/ball launch 4.MOV"></video>
+                        <h3>4th Attempt</h3>
+                        <p class="work-words">Simulated ramp conditions with full power outside of the real enclosure</p>
+                    </div>
+        
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/ball launch 5.MOV"></video>
+                        <h3>5th Attempt</h3>
+                        <p class="work-words">Glued the system inside of the real enclosure and did a test with a fake 
+                            ramp since it was hard to simulate a rolling ball into the system in the previous attempt</p>
+                    </div>
+
+                </div>
+
+
+                <h2 class="title">Ball Detection Mechanism</h2>
+
+                The seesaw concept was required since we couldnt detect a single ball. The sensor was not good enough to 
+                detect something that small so to increase the surface area, I built a seesaw out of legos. When the ball 
+                goes down it blocked the sensor and it was programmed such that if the measurement was less than 10cm, it 
+                would decrease the ball count. It was good that the difference in measurement readings was high since 
+                there would be random mismeasurements ranging from 20-30 cm during regular operation, so as a buffer, 
+                we made it less than 10cm and there were no issues.
+
+                <div class="pinball-list">
+        
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/ball detection.MOV"></video>
+                        <h3>Concept</h3>
+                        <p class="work-words">To ensure the sensor was able to read the ball falling down, I simulated it 
+                            and recorded the distanced measured and analyzed it in slow motion to ensure the sensor could 
+                            read the change fast enough. Luckily, it was able to but the accuracy was not that good so in 
+                            the code, it was made a range to ensure it acted very binary.</p>
+                    </div>
+        
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/ball detection 2.MOV"></video>
+                        <h3>Integration</h3>
+                        <p class="work-words">This is showing the integration into the main enclosure.</p>
+                    </div>
+        
+                </div>
+
+                <h2 class="title">Ball Launch and Flippers</h2>
+
+                Originally, we had the flippers and the entire game logic running separately in our code. But after 
+                consulting with the professor, they said it was too easy so they made us come up with another way. 
+                We ended up using a lot of booleans and if statements to represent different game states and the 
+                whole thing gets run over and over in a while loop. We realize this is severely inefficient but it 
+                was what was asked of us to do. This video shows us successfully redoing our code in this style and 
+                as you can tell, we were very happy.
+
+                <div class="pinball-list">
+        
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/ball launch and flippers.MOV"></video>
+                        <h3>Integration</h3>
+                        <p class="work-words">The successful integration using a ladder logic style code.</p>
+                    </div>
+        
+                </div>
+
+                <h2 class="title">Ball Launch and Ball Release</h2>
+
+                The design of the ball release mechanism is severely flawed since the timing fully relies on the angle that
+                 the box is on. The difference between a successful release and an unsuccessful one was only a few ticks 
+                 on the encoder. Unfortunately we did not have time to redesign this system once we realized how flawed 
+                 it was. The best we could do was to get the timing as good as we could and release the ball once the ball 
+                 launch system was up to max speed. This timing also changed based on how many balls were in the lineup so 
+                 unfortunately this was a major flaw. I discuss alternative designs further in the report that is 
+                 downloadable at the bottom of this page.
+
+                <div class="pinball-list">
+        
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/ball release and launch.MOV"></video>
+                        <h3>Integration</h3>
+                        <p class="work-words">The successful integration of the ball release mechanism.</p>
+                    </div>
+
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/full system testing.MOV"></video>
+                        <h3>Testing</h3>
+                        <p class="work-words">Trying to troubleshoot the timing of the ball release arm when there 
+                            are a different number of balls in line. You can also see the platforms that the flippers 
+                            sit on and the ball detection system installed.</p>
+                    </div>
+        
+                </div>
+
+                <h2 class="title">More Construction Pictures</h2>
+
+                Here are some pictures of the progress.
+
+                <div class="pinball-list">
+
+                    <div class="work">
+                        <img class="img" src="images/Pinball/building in progress.png">
+                        <h3>Inside View 1</h3>
+                        <p class="work-words">Shows the ball release, ball launch, and ball detection with the ramps </p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Pinball/Pinball In Progress.JPG">
+                        <h3>Inside View 2</h3>
+                        <p class="work-words">Shows all of the internals including the game field motors and flipper platforms.</p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Pinball/full system insides.png">
+                        <h3>Inside View 3</h3>
+                        <p class="work-words">Shows all of the internals but the ball launch was removed for repair.</p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Pinball/Pinball Layout.JPG">
+                        <h3>Board Layout</h3>
+                        <p class="work-words">Pencil layout of the flippers and the backboard layout with the drop hole. Flippers installed and used rubber bands as a means to prevent rotation when the flipper strikes the ball ie. homemade loctite since we were not allowed to use it on the schools equipment.</p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Pinball/pinball enclosed.png">
+                        <h3>Top View</h3>
+                        <p class="work-words">Full layout of the board and all holes drilled. Acryllic top and front face installed.</p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Pinball/painting.png">
+                        <h3>Painting</h3>
+                        <p class="work-words">Painting the board and box</p>
+                    </div>
+
+        
+                </div>
+
+                <h2 class="title">Final Pictures</h2>
+
+                Pictures of the final product. Deemed by the professors, TA's, Head of Mechatronics Engineering, and the Dean of Engineering as the most complete project they had ever seen.
+
+                <div class="pinball-list">
+
+                    <div class="work">
+                        <img class="img" src="images/Pinball/pinball setup presentation.png">
+                        <h3>Demo Day Setup</h3>
+                        <p class="work-words">Shows our demonstration day setup.</p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Pinball/Playing Final.png">
+                        <h3>Someone Playing</h3>
+                        <p class="work-words">Shows how someone would be playing with the flipper activators in their hands and a ball on the board.</p>
+                    </div>
+        
+                </div>
+
+                <h2 class="title">Final Videos</h2>
+
+                Videos of the final product. 
+
+                <div class="pinball-list">
+
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/Final Playing.mp4"></video>
+                        <h3>Playing in Normal Mode</h3>
+                        <p class="work-words">This is the first time we are playing the game after completing the project, unfortunately Jerry's round got cut out of the video by accident. You can see that there is a leaderboard system programmed in using file read/write.</p>
+                    </div>
+                    
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/Balls of Fury Gameplay.mp4"></video>
+                        <h3>Playing in Balls of Fury Mode</h3>
+                        <p class="work-words">This was a last second add so you can see that there are some issues with balls getting stuck and flippers malfunctioning. This is partley due to extended use during demo day and that this mode was not tested very much. We were very impressed that the ball detection system was able to detect that 2 balls had fallen down in rapid succession.</p>
+                    </div>
+
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Pinball/No audio pinball gameplay.mp4"></video>
+                        <h3>Playing in Normal Mode 2</h3>
+                        <p class="work-words">THIS VIDEO DOES NOT HAVE AUDIO. Unfortunately the audio was muted in the original video but it still shows off the game mode features. After a set amount of time, the field motors ramp up in speed and there is another ball released on to the field which helps the player earn more points per second. This continues until all balls have fallen down or there is 8 balls on the field at once. At the end of the video, you can see the leaderboard displayed.</p>
+                    </div>
+        
+                </div>
+
+            </div>
+        </div>
+        
+        
         <div class="section">
             <h2 class="title">Full Report Download</h2>
             <p><a href="images/Pinball Final Report.pdf" download class="btn">Download Pinball Report</a></p>
         </div>
+    
+        
+
     </div>
 
 </body>
