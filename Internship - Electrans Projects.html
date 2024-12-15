@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projectpage.css">
+    <title>Electrans Projects</title>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/Nicholas Drazso - LOGO GREY.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#portfolio">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="words">
+        <div class="section">
+            <h1 class="title">Electrans Projects</h1>
+            <p>
+                Below are the two main projects I worked on during my internship. The first involved designing a custom
+                bed of nails test fixture for a CAN board. I created a custom control PCB using Altium to perform power
+                tests, CAN tests, and resistance checks. Alongside this, I used a Raspberry Pi 4 to write a PyTest
+                script that ran a series of tests and logged the results in a Google Sheets database.
+            </p>
+            <br />
+            <p>
+                The second project, which evolved through several stages, addressed the problem of drivers forgetting to
+                raise the boom on a truck, leading to significant system damage. After several iterations of
+                accelerometer R&D attempting to record precision angles, we ended up implementing a proximity sensor and
+                sheet metal solution.
+            </p>
+        </div>
+
+        <div id="portfolio">
+            <div class="container">
+
+                <h2 class="title">Bed of Nails Test Fixture</h2>
+
+                <p>
+                    This was the primary project during my internship. A business-critical CAN PCB needed to be tested
+                    at scale, and I was tasked with designing and building the bed of nails test fixture to accommodate
+                    each unit. The project consisted of three key components:
+                <ol style="margin-left: 20px; padding-left: 20px;">
+                    <li>Mechanical: The pressing mechanism, the enclosure, and ensuring a smooth user experience.</li>
+                    <li>Electrical: The design of a custom control PCB with pogo pins, routing appropriate power to the
+                        enclosure, and selecting the right computer interface.</li>
+                    <li>Software: Choosing a testing framework and writing scripts to assess the functionality of the
+                        CAN board.</li>
+                </ol>
+                </p>
+                <br />
+                <p>This project was an excellent fit for me, as my focus is on mechatronic test equipment design. I was
+                    excited to design the custom PCB and write the necessary software to conduct the tests. A primary
+                    goal was to ensure an exceptional user experience and make the fixture modular, so that minimal
+                    adjustments would be needed when testing different PCBs.</p>
+                <br />
+                <p>I selected an off-the-shelf enclosure from McMaster-Carr for its simplicity and cost-effectiveness.
+                    The enclosure is also future-proofed, being larger than required for current needs, which allows for
+                    potential additions in the future. I made the center plate 3D printable so that it can be easily
+                    swapped out for testing different PCBs. Additionally, the pressing plate is 3D printed to prevent
+                    damage to components on the device under test (DUT) and allow for complex geometry of the mechanism
+                    at a low cost.</p>
+
+                <!-- Mechanical Enclosure Pics -->
+                <div class="pinball-list">
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/Fixture front - up.png">
+                        <h3>Fixture with Press Up</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/Fixture front - Down.png">
+                        <h3>Fixture with Press Down</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/fixture back.png">
+                        <h3>Back of Fixture</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/Bottom of press - in.png">
+                        <h3>Pressing Plate</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/fixture front - cross section .png">
+                        <h3>Cross Section</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/pcb holder zoomed in .png">
+                        <h3>PCB Holder</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/Pressing mechanism.jpg">
+                        <h3>Pressing Mechanism</h3>
+                        <p class="work-words"></p>
+                    </div>
+                </div>
+
+                <p>
+                    The next step in the project was designing a pogo pin control board that needed to:
+                <ol style="margin-left: 20px; padding-left: 20px;">
+                    <li>Support +/-12V power testing capabilities.</li>
+                    <li>Perform CAN bus termination resistance checks.</li>
+                    <li>Enable CAN communication.</li>
+                </ol>
+                </p>
+                <br />
+                <p>The board also needed to interface with a Raspberry Pi 4, functioning similarly to a hat. The design
+                    of the PCB, including schematics, layout, and final 3D views, was done in Altium. At the time of
+                    writing, the PCB is in the manufacturing stage, and I will update this section with real-world
+                    images once they are available.
+                </p>
+
+                <a href="images/Bed of Nails Pogo Board - Schematics.pdf" download class="btn btn2">Download PDF of
+                    Schematics and 2D Layout</a>
+
+                <!-- PCB Pics -->
+                <div class="pinball-list">
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/top level.png">
+                        <h3>Top Level</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/power.png">
+                        <h3>Power</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/can resistance check.png">
+                        <h3>CAN Resistance Sense</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/IC's.png">
+                        <h3>IC's</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/2d layout.png">
+                        <h3>2D Layout</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/Front PCB 3D.png">
+                        <h3>3D view of PCB - Front</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Bed of Nails/Back PCB 3D.png">
+                        <h3>3D view of PCB - Back</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+
+                </div>
+
+                <p>
+                    The software component of this project was both the most exciting and the most challenging for me. I
+                    chose Pytest for its robust documentation and ease of use, which would help me move quickly. I knew
+                    I would need to develop the software efficiently, and Pytest's error tracking capabilities were a
+                    significant advantage since each PCB test generates a record for future reference. This software
+                    runs on the Raspberry Pi 4 and interfaces with the control PCB. While I may eventually upload the
+                    code to my GitHub, it may contain sensitive information, so I will need to be cautious.
+                </p>
+
+                <h2 class="title">Autonomous Boom Control</h2>
+
+                <p>When connecting certain trailers, the system on our trucks risked being crushed if the driver didn’t
+                    raise the boom high enough. To address this issue, we aimed to automate the boom-raising process.
+                    The project started as a poorly defined problem, and unclear requirements led to unnecessary
+                    iterations and delays before reaching a solution.</p>
+                <br />
+                <p>The primary success criterion was to maintain a minimum angle of 2 degrees between the truck and
+                    trailer to prevent system damage, without exceeding 10 degrees to avoid unnecessary boom raising.
+                    Initially, I proposed a straightforward binary system: if the angle exceeded 5 degrees (2 degrees
+                    plus a safety margin), no action was required. If the angle fell below 5 degrees, the system would
+                    raise the boom until the threshold was reached.</p>
+                <br />
+                <p>However, there was a decision to measure the angle in real-time with a ±0.5-degree accuracy, a
+                    requirement that shifted multiple times during development. This approach proved challenging,
+                    requiring high-quality sensors, reliable data acquisition, and additional time to develop robust
+                    code. I originally set up a 3-axis analog accelerometer (ADXL 335) as a proof of concept, with a
+                    relay board to switch control between the system and the user. Using an Arduino Uno, I wrote code
+                    that applied a smoothing algorithm over the last 20 accelerometer samples. Also, I mounted these
+                    sensors at approximately a 45 degree angle since during my calibration against measured angles, I
+                    found that the sensors were most accurate in the 35-55 degree range.</p>
+                <br />
+                <p>Testing on the truck included nine test cases ranging from static conditions to driving over bumps
+                    while raising the boom. I repeated the tests on two separate days with a 15°C temperature
+                    difference. The prototype achieved an accuracy of ±0.5 degrees, meeting the original requirements. I
+                    did come across some EMI issues since the long run of unshielded wire acted as attena's, so I
+                    ordered shielded wire for the next series of testing.
+                    However, despite meeting the criteria, the team required an even higher accuracy of ±0.1 degrees,
+                    which I found unnecessary and difficult to justify.</p>
+                <br />
+                <p>To meet the new demands, I switched to the Murata SCA830-D07, a single-axis automotive SPI
+                    accelerometer. While exploring an upgrade to a 9-axis BNO055 IMU for potential benefits like easier
+                    calibration, we ultimately rejected it due to increased complexity. Since no breakout board existed
+                    for the Murata sensor and we were facing many issues during the first few hours of testing, I
+                    designed a custom PCB to streamline troubleshooting and testing,
+                    eliminating uncertainties from soldering, component failures, or coding issues.</p>
+                <br />
+                <p>During the breakout board schematic review, another system failure occurred, damaging a unit. This
+                    prompted a pivot to a simpler binary solution using an inductive proximity sensor already in use
+                    elsewhere on the system. I designed two sheet metal brackets: one to mount the sensors and the other
+                    to serve as the "target" bracket for the sensors.</p>
+                <br />
+                <p>To ensure the target bracket height was accurate, I verified that when the boom raised and the
+                    sensors passed above the top of the target bracket, the sensor signal went low, indicating the
+                    5-degree threshold had been met. I repeated the same process for the 8-degree threshold to verify
+                    redundancy. The solution was tested, and a video demonstrating the functionality is
+                    included below! The prototype was accurate to +/- 0.5 degrees and was only tested in a static
+                    condition because at the time, we were not able to drive the truck. Vibrations were a concern, so we
+                    added bracing and ordered some prototypes to do further testing in different conditions. </p>
+                <br />
+                <p>We abandoned the strict ±0.1-degree requirement and changed it to ±1.5 degrees, opting to focus on
+                    immediate system protection. The sensors were mounted to the second sheet metal bracket, which was
+                    mounted to existing holes on the truck, and connected to an ECU that interfaced with the boom
+                    control pump via CAN messages. This solution was simpler, cheaper, and more robust, allowing for
+                    rapid deployment without the need for additional enclosures or mounting solutions for the
+                    accelerometer.</p>
+                <br />
+                <p>This experience reinforced the importance of challenging overly complex requirements and keeping
+                    designs simple. Below are pictures of the initial 3-axis accelerometer tests, the final sheet metal
+                    solution, and the prototype in action.</p>
+                <br />
+                <p>While I focused on the mechanical portion of the solution, the lead electrical engineer handled the
+                    dashboard controller PCB design due to the tight timeline. The controller determined whether the
+                    system or the driver controlled the boom, with safety measures ensuring default control reverted to
+                    the driver if power was lost or an error occurred. The final system integrates seamlessly into
+                    existing trucks, using existing mounting points and CAN communication to prevent crushing issues
+                    effectively.</p>
+
+
+                <div class="pinball-list">
+
+                    <div class="work">
+                        <img class="img" src="images/Inclination Sensor/3 axis up close.png">
+                        <h3>3 axis analog accelerometers up close</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Inclination Sensor/3 axis with relay board.png">
+                        <h3>3 axis analog accelerometers with relay board</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Inclination Sensor/test setup in truck.png">
+                        <h3>Testing setup in truck</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <video class="resize" controls="controls"
+                            src="images/Inclination Sensor/boom moving with 3 axis.MOV"></video>
+                        <h3>3 axis analog accelerometers with boom moving during prototype testing</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Inclination Sensor/zoomed out.png">
+                        <h3>Inductive proximity sensor mount - CAD zoomed out</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Inclination Sensor/zoomed in.png">
+                        <h3>Inductive proximity sensor mount - CAD zoomed in</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Inclination Sensor/prototype inclination.png">
+                        <h3>Inductive proximity sensor mount - prototype mounted IRL side view</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Inclination Sensor/prototype inclination top view.png">
+                        <h3>Inductive proximity sensor mount - prototype mounted IRL top view</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Inclination Sensor/inclination test setup with trailer.png">
+                        <h3>Inductive proximity sensor mount - testing with trailer and angle measurement tool</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <video class="resize" controls="controls" src="images/Inclination Sensor/long test.MOV"></video>
+                        <h3>Inductive proximity sensor mount - static testing video</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

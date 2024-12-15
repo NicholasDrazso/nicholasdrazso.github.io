@@ -1,226 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicholas Drazso Website</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/cba55568e9.js" crossorigin="anonymous"></script>
-</head>
-<body>
-<div id="header">
-    <div class="container">
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/cba55568e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
         <nav>
-            <img src="images/Nicholas Drazso - LOGO BLACK.png" class="logo">
-            <ul>
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+          <img src="images/Nicholas Drazso - LOGO BLACK.png" class="logo" />
+          <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </nav>
         <div class="header-text">
-            <h1>Hi, I'm a <span>Creator</span></h1>
+          <h1>Hi, I'm a <span>Creator</span></h1>
         </div>
+      </div>
     </div>
-</div>
 
-<!--------about---------->
-<div id="about">
-    <div class="container">
+    <!--------about---------->
+    <div id="about">
+      <div class="container">
         <div class="row">
-            <div class="about-col-1">
-                <img src="images/bull.JPG">
-            </div>
-            <div class="about-col-2">
-                <h2 class="sub-title">About Me</h2>
-                <p>I am a 3rd year Mechatronics Engineering Student at the University of Waterloo. I am passionate about robotics and mechatronics specifically 
-                    because it is a multidisplinary field where I can use a mix of skills to come up with creative solutions to complex problems. My most recent internship was at Tesla, working under cell qualification as a test equipment design engineering intern (yes, I know that's a mouthful haha).
-                    In this position, I designed, validated, implemented, and troubleshot test equipment to help accelerate the research and development of cell technology for the company. I mainly root caused failures
-                    on a novel cell test fixture which resulted in me implementing 5 major design changes that were key to providing full functionality to the test unit. 
-                    Bringing this tester to full functionality was a major impact to Tesla and it felt great to be able to make such a meaningful impact after many many hours of work.
-                    I also did 3 other projects that developed my skills in python, GD&T, CAN communication, and mechanical design/assembly. For more information on these projects please 
-                    reach out to me by scrolling down and contacting me via email or message on LinkedIn! 
-            
-                </p>  
-                <br/>
-                <p>
-                    Moving forward, I am looking to strengthen my software skills and also look to purchase my own 3D printer to begin doing more complex 
-                    personal projects. One day, I hope to have my own company, that is somehow making the world a better place. In the mean time, through 
-                    my internships and projects, I hope to keep learning skills that can help lead to this goal. Internships that give me opportunities
-                    to work on niche and novel things and develop creative solutions to meaningful problems is the main goal! So please reach out!
-                </p>
+          <div class="about-col-1">
+            <img src="images/bull.JPG" />
+          </div>
+          <div class="about-col-2">
+            <h2 class="sub-title">About Me</h2>
+            <p>
+              I am a 3rd year Mechatronics Engineering Student at the University
+              of Waterloo but I am also a 2 time founder with 5 internships
+              completed and I am also a design team lead. I am passionate about
+              robotics and mechatronics specifically because it is a
+              multidisplinary field where I can use a mix of skills to come up
+              with creative solutions to complex problems. I love to build,
+              create, and I have a passion for entrepreneurship/startups.
+            </p>
+            <br />
+            <p>
+              I am currently looking for my 6th and final internship which will
+              hopefully be in the field of actuator design, sensor design, or
+              design/testing for novel systems. Please download my resume and/or
+              take a look at my projects, businesses, and past internships below
+              then reach out and lets talk about how we can change the world
+              together!
+            </p>
 
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                </div> 
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Fabrication, 10 years</span><br>10 years of hands on construction with wood and metal including welding</li>
-                        <li><span>3D Printing, 1 year</span><br>500+ parts printed at botbuilt, 20+ for personal projects, 20+ for school projects, and 50+ at past internships</li>
-                        <li><span>SolidWorks, 3 years</span><br>Learned during univerity class in 2019, honed skills in design team, past internships, and personal projects</li>
-                        <li><span>ROS2, 4 months</span><br>Self taught tutorials on ros2.org and during my internship at botbuilt </li>
-                        <li><span>C++, 2 years</span><br>3 classes during university and during my internship at botbuilt</li>
-                        <li><span>Linux, 6 months</span><br>Self taught and during my intership at botbuilt</li>
-                        <li><span>MATLAB, 8 months</span><br>Learned throughout school work</li>
-                        <li><span>Java, 2 years</span><br>3 classes during highschool</li>
-                        <li><span>Soldering, 1 year</span><br>Self taught, soldered many times at previous internships</li>
-                        <li><span>Arduino, 2 months</span><br>Self taught</li>
-                        <li><span>and more...see resume please!</span><br></li>
-                    </ul>
-                </div>  
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>Tesla, Test Equipment Design Engineering Intern</span><br>Developed cell testing equipment for cell R&D</li>
-                        <li><span>BotBuilt, Mechanical Engineer</span><br>Robotic construction Y-Combinator start up</li>
-                        <li><span>Pure Technologies, Mechatronics Engineer</span><br>Pipeline inspection robot R&D</li>
-                        <li><span>EM Dynamics, Mechanical Engineer</span><br>Custom industrial and artistic sheet metal projects</li>
-                        <li><span>PB Solutions+, Owner</span><br>Paintball gun servicing company</li>
-                        <li><span>Waterloop, Mechanical Engineer</span><br>Hyperloop student design team</li>
-                        <li><span>Lardale Construction, Crew Lead</span><br>Crew lead for a construction company</li>
-
-                    </ul>
-                </div>  
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2019 - Current | University of Waterloo</span><br>Mechatronics Engineering</li>
-                        <li><span>2015 - 2019 | R.S. McLaughlin CVI</span><br>Honours Graduate</li>
-                    </ul>
-                </div>     
+            <div class="social-icons">
+              <a href="mailto:nick.drazso@gmail.com"
+                ><i class="fa-solid fa-envelope"></i> nick.drazso@gmail.com</a
+              >
+              <a href="https://www.linkedin.com/in/nicholasdrazso/"
+                ><i class="fa-brands fa-linkedin"></i> Nicholas Drazso</a
+              >
             </div>
+            <a
+              href="images/Nicholas Drazso Resume.pdf"
+              download
+              class="btn btn2"
+              >Download Resume</a
+            >
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Mechanical</span><br />
+                  <ol>
+                    <li>CATIA 3DX</li>
+                    <li>Solidworks</li>
+                    <li>GD&T</li>
+                    <li>DFM</li>
+                    <li>Sheet Metal Design</li>
+                  </ol>
+                </li>
+
+                <li>
+                  <span>Electrical</span><br />
+                  <ol>
+                    <li>Altium</li>
+                    <li>PCB Assembly</li>
+                    <li>CAN</li>
+                    <li>SPI</li>
+                    <li>I2C</li>
+                    <li>Wire Harnesses Design</li>
+                    <li>Soldering</li>
+                  </ol>
+                </li>
+
+                <li>
+                  <span>Software</span><br />
+                  <ol>
+                    <li>C++</li>
+                    <li>Python</li>
+                    <li>MATLAB</li>
+                    <li>SIMULINK</li>
+                    <li>LINUX</li>
+                  </ol>
+                </li>
+
+                <li>
+                  <span>Prototyping</span><br />
+                  <ol>
+                    <li>3D Printing</li>
+                    <li>Arduino</li>
+                    <li>Raspberry Pi</li>
+                    <li>Machining</li>
+                    <li>Welding</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>Electrans, Mechatronics Engineering Intern</span
+                  ><br />Developed custom bed of nails test fixture and did
+                  other mechtronics R&D
+                </li>
+                <li>
+                  <span>Tesla, Test Equipment Design Engineering Intern</span
+                  ><br />Developed cell testing equipment for cell R&D
+                </li>
+                <li>
+                  <span>BotBuilt, Mechanical Engineer</span><br />Robotic
+                  construction Y-Combinator start up
+                </li>
+                <li>
+                  <span>Pure Technologies, Mechatronics Engineer</span
+                  ><br />Pipeline inspection robot R&D
+                </li>
+                <li>
+                  <span>EM Dynamics, Mechanical Engineer</span><br />Custom
+                  industrial and artistic sheet metal projects
+                </li>
+                <li>
+                  <span>Lardale Construction, Crew Lead</span><br />Crew lead
+                  for a construction company
+                </li>
+                <li>
+                  <span>PB Solutions+, Founder</span><br />Paintball gun
+                  servicing company
+                </li>
+                <li>
+                  <span>Nicks Custom Woodworking, Founder</span><br />Custom
+                  wooden pens and live edge tables
+                </li>
+                <li>
+                  <span>UW DeepBlue, Mechanical Team Lead</span><br />Leading
+                  team of 8 to design underwater autonomous submarine for 2025
+                  Robosub Competition
+                </li>
+                <li>
+                  <span>Waterloop, Mechanical Engineer</span><br />Hyperloop
+                  student design team
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2019 - Current | University of Waterloo</span
+                  ><br />Mechatronics Engineering
+                </li>
+                <li>
+                  <span>2015 - 2019 | R.S. McLaughlin CVI</span><br />Honours
+                  Graduate
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-----------portfolio-->
-<div id="portfolio">
-    <div class="container">
+    <!-----------portfolio-->
+    <div id="portfolio">
+      <div class="container">
         <h2 class="sub-title">Projects</h2>
         <div class="work-list">
-
-            <div class="work">
-                <img src="images/Pinball/Pinball Cover.jpg">
-                <div class="layer">
-                    <h3>Pinball Machine</h3>
-                    <p>A multigame mode fully functioning pinball machine</p>
-                    <a href="Pinball.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-
+          <div class="work">
+            <img src="images/Bed of Nails/Fixture front - up.png" />
+            <div class="layer">
+              <h3>Internship - Electrans Projects</h3>
+              <p>Custom bed of nails test fixture and sensor R&D</p>
+              <a href="Internship - Electrans Projects.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="work">
-                <img src="images/Botbuilt Projects/new build/Botbuilt - Input table in progress.png">
-                <div class="layer">
-                    <h3>BotBuilt Projects</h3>
-                    <p>Various Projects from a Robotics Co-op</p>
-                    <a href="Botbuilt Projects.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img
+              src="images/Botbuilt Projects/new build/Botbuilt - Input table in progress.png"
+            />
+            <div class="layer">
+              <h3>internship - BotBuilt Projects</h3>
+              <p>Various Projects from my Robotics Co-op</p>
+              <a href="Internship - Botbuilt Projects.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="work">
-                <img src="images/Garage/Garage Cover.jpg">
-                <div class="layer">
-                    <h3>Garage</h3>
-                    <p>Built a 28' x 30' garage</p>
-                    <a href="Garage.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img src="images/Paintball/running.JPG" />
+            <div class="layer">
+              <h3>Business - PB Solutions</h3>
+              <p>Paintball Marker Repair Business</p>
+              <a href="Business - PB Solutions.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="work">
-                <img src="images/Trebuchet/Trebuchet Cover.jpg">
-                <div class="layer">
-                    <h3>Trebuchet</h3>
-                    <p>Built a trebuchet that launches a tennis ball 100m</p>
-                    <a href="Trebuchet.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img src="images/Woodworking/Woodshop Cover.jpg" />
+            <div class="layer">
+              <h3>Business - Woodworking</h3>
+              <p>Woodworking and Custom Wooden Pens Business</p>
+              <a href="Business - Woodworking.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="work">
-                <img src="images/Potentiometer/Finished Potentiometer.jpg">
-                <div class="layer">
-                    <h3>Potentiometer</h3>
-                    <p>Designed, built, and calibrated a linear potentiometer</p>
-                    <a href="Potentiometer.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img src="images/DeepBlue/Octohull.png" />
+            <div class="layer">
+              <h3>Design Team - DeepBlue</h3>
+              <p>
+                Mechanical Lead - Underwater Autonomous Vehicle Student Design
+                Team
+              </p>
+              <a href="Design Team - DeepBlue.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="work">
-                <img src="images/Bottle Rocket/bottle rocket cover.jpg">
-                <div class="layer">
-                    <h3>Bottle Rocket</h3>
-                    <p>Designed, built, and demonstrated a pop bottle rocket with a parachute system</p>
-                    <a href="Bottle Rocket.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img src="images/waterloop/assembly view.png" />
+            <div class="layer">
+              <h3>Design Team - Waterloop</h3>
+              <p>Mechanical Member - Hyperloop Student Student Design Team</p>
+              <a href="Design Team - Waterloop.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="work">
-                <img src="images/Deadlift Jack/deadlift jack take2.jpg">
-                <div class="layer">
-                    <h3>Deadlift Jack</h3>
-                    <p>Designed and built a deadlift bar jack for the gym</p>
-                    <a href="Deadlift Jack.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img src="images/Potentiometer/Finished Potentiometer.jpg" />
+            <div class="layer">
+              <h3>Project - Potentiometer</h3>
+              <p>Designed, built, and calibrated a linear potentiometer</p>
+              <a href="Project - Potentiometer.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="work">
-                <img src="images/Model Eye/model eye cover.jpg">
-                <div class="layer">
-                    <h3>Model Eye</h3>
-                    <p>Designed and built a replica human eye for science class</p>
-                    <a href="Model Eye.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img src="images/Pinball/Pinball Cover.jpg" />
+            <div class="layer">
+              <h3>Project - Pinball Machine</h3>
+              <p>A multigame mode fully functioning pinball machine</p>
+              <a href="Project - Pinball.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="work">
-                <img src="images/Woodworking/Woodshop Cover.jpg">
-                <div class="layer">
-                    <h3>Woodworking</h3>
-                    <p>Highschool and Personal Woodworking Projects</p>
-                    <a href="Woodworking.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img src="images/Garage/Garage Cover.jpg" />
+            <div class="layer">
+              <h3>Project - Garage</h3>
+              <p>Built a 28' x 30' garage</p>
+              <a href="Project - Garage.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
+
+          <div class="work">
+            <img src="images/Deadlift Jack/deadlift jack take2.jpg" />
+            <div class="layer">
+              <h3>Project - Deadlift Jack</h3>
+              <p>Designed and built a deadlift bar jack for the gym</p>
+              <a href="Project - Deadlift Jack.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/Trebuchet/Trebuchet Cover.jpg" />
+            <div class="layer">
+              <h3>project - Trebuchet</h3>
+              <p>Built a trebuchet that launches a tennis ball 100m</p>
+              <a href="Project - Trebuchet.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/Bottle Rocket/bottle rocket cover.jpg" />
+            <div class="layer">
+              <h3>Project - Bottle Rocket</h3>
+              <p>
+                Designed, built, and demonstrated a pop bottle rocket with a
+                parachute system
+              </p>
+              <a href="Project - Bottle Rocket.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/Model Eye/model eye cover.jpg" />
+            <div class="layer">
+              <h3>Project - Model Eye</h3>
+              <p>Designed and built a replica human eye for science class</p>
+              <a href="Project - Model Eye.html"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-----------Contact-->
-<div id="contact">
-    <div class="container">
+    <!-----------Contact-->
+    <div id="contact">
+      <div class="container">
         <div class="row">
-            <div class="contact-left">
-                <h2 class="sub-title">Contact Me</h2>
-                <div class="social-icons">
-                    <a href="mailto:ndrazso@uwaterloo.ca"><i class="fa-solid fa-envelope"></i> ndrazso@uwaterloo.ca</a>
-                    <a href="https://www.linkedin.com/in/nicholasdrazso/"><i class="fa-brands fa-linkedin"></i> Nicholas Drazso</a>
-                </div>
-                <a href="images/Nicholas Drazso Resume.pdf" download class="btn btn2">Download Resume</a>
+          <div class="contact-left">
+            <h2 class="sub-title">Contact Me</h2>
+            <div class="social-icons">
+              <a href="mailto:ndrazso@uwaterloo.ca"
+                ><i class="fa-solid fa-envelope"></i> ndrazso@uwaterloo.ca</a
+              >
+              <a href="https://www.linkedin.com/in/nicholasdrazso/"
+                ><i class="fa-brands fa-linkedin"></i> Nicholas Drazso</a
+              >
             </div>
-            
+            <a
+              href="images/Nicholas Drazso Resume.pdf"
+              download
+              class="btn btn2"
+              >Download Resume</a
+            >
+          </div>
         </div>
+      </div>
     </div>
-</div>
- 
-<script>
 
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    
-    function opentab(tabname) {
-        for(tablink of tablinks) {
-            tablink.classList.remove("active-link");
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
         }
-        for(tabcontent of tabcontents) {
-            tabcontent.classList.remove("active-tab");
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
         }
-        
+
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
-    }
-
-</script>
-
-</body>
+      }
+    </script>
+  </body>
 </html>

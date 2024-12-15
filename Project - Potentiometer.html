@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projectpage.css">
+    <title>Potentiometer</title>
+</head>
+<body>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/Nicholas Drazso - LOGO GREY.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#portfolio">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="words">
+        <div class="section">
+            <h1 class="title">Potentiometer</h1>
+            <p>
+            This is a potentiometer that was made for measuring distance.
+            </p>
+
+            <img class="resize" src="images/potentiometer/rendered potentiometer.png">
+
+        </div>
+
+        <div class="section">
+            <h2 class="title">Timeline</h2>
+            <p>
+                This project spanned over 1 week. Approximately 15 hours was spent on the project including concept, design, construction, and calibration. 
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="title">Design</h2>
+            <p>The requirements were</p>
+            <div class="list-contents">
+                <ol>
+                    <li>Measure between 0cm and 10cm</li>
+                    <li>Tolerance of +/-0.5cm</li>
+                </ol>
+            </div>
+            <p>
+            We used the theory of a voltage divider for the design. 
+            A nichrome wire was wound around a piece of acryllic that acted as a single resistor. 
+            This resistor was split into 2 resistors with a copper wire. 
+            The resistance that the output voltage experienced was determined by how far along 
+            the copper wire was on the resistive coil. This distance was directly related to the length of the object being measured.
+            </p> 
+            <img src="images/Potentiometer/Finished Potentiometer.jpg" class="resize">
+        </div>
+
+        <div class="section">
+            <h2 class="title">Calibration</h2>
+            <p>
+                To calibrate, we used machine shop guage blocks to as a reference distance then recorded the voltage output based on the known measurement.
+                A voltage vs distance graph was plotted and the equation of the line was taken to be the calibration equation. 
+                To obtain the tolerance, we used the calibration equation with the already recorded voltages to collect a set of calculated lengths. 
+                Since each voltage corresponds to a true length and now a calculated length, a deviation between the two can be calculated by subtracting 
+                the calculated length from the true length. 
+                A graph of true length to deviation was plotted and the maximum and minimum y values were taken to be the +/- values for the tolerance. 
+            </p>  
+            <img src="images/Potentiometer/Calibration.jpg" class="resize">
+        </div>
+        
+        <div class="section">
+            <h2 class="title">Performance</h2>
+            <p>
+                Although we did hit the requirement of the +/-0.5cm during calibration, we did not come close to this during presentation. Instead, we were calculating values +/- 3cm from the true length. 
+                We determined that due to:
+                <div class="list-contents">
+                    <ol>
+                        <li>the resistive wire shifting along the acryllic path</li>
+                        <li>the wired connections becoming loose at the power supply and measurement position</li>
+                        <li>the copper measurement wire not maintaining a consistent contact point to the resistive coil</li>
+                        <li>the copper measurement wire oxidizing from calibration to presentation</li>
+                    </ol>
+                </div>
+                the calibration equation changed and therefore we were calculating lengths that were not close to the true lenths.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2 class="title">Recomendations for Future Iterations</h2>
+            <p>
+                <div class="list-contents">
+                    <ol>
+                        <li>Construct out of more accurate material than 3D printed components and wood, potentially 80/20 aluminum extrusion</li>
+                        <li>Develop a resistor that was homogeneous and linear that can be interacted with without creating inconsistencies, such as an epoxy+carbon blended pad</li>
+                        <li>Interacting with the resistive component at a single point to reduce inconsistencies</li>
+                    </ol>
+                </div>
+            </p>
+        </div>
+
+        <div id="portfolio">
+            <div class="container">
+
+                <h2 class="title">Construction Pictures</h2>
+
+                The following show different components and stages of the build.
+
+                <div class="pinball-list">
+
+                    <div class="work">
+                        <img class="img" src="images/Potentiometer/Potentiometer - In progress prewind.png">
+                        <h3>Prior to Winding the Wire and Assembly</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Potentiometer/Potentiometer - Measuring.png">
+                        <h3>Demonstration Measurement using Iphone</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Potentiometer/Potentiometer - Zoomed in.png">
+                        <h3>Close Up of Completed Potentiometer</h3>
+                        <p class="work-words"></p>
+                    </div>
+
+                    <div class="work">
+                        <img class="img" src="images/Potentiometer/Potentiometer - Wiper touching wire.png">
+                        <h3>Close Up of Wiper and Wire Interacting</h3>
+                        <p class="work-words">This is a major flaw in the design.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="title">Full Report Download</h2>
+            <p><a href="images/Potentiometer Report.pdf" download class="btn">Download Potentiometer Report</a></p>
+        </div>
+
+    </div>
+
+</body>
+</html>
