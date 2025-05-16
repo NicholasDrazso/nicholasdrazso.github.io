@@ -1,152 +1,179 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    background: #080808;
-    color: #080808;
+  background: #080808;
+  color: #080808;
 }
 
-
-.container{
-    padding: 10px 2%;
+.container {
+  padding: 10px 2%;
 }
 
-nav{
-    display: flex;
-    align-items: top;
-    justify-content: space-between;
-    flex-wrap: wrap;
+nav {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.logo{
-    width: 400px;
+.logo {
+  width: 400px;
 }
 
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 25px;
-
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 25px;
 }
 
-nav ul li a{
-    color: #ababab;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
+nav ul li a {
+  color: #ababab;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
 
-    position: relative;
+  position: relative;
 }
 
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 4px;
-    background: #8c52ff;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.3s;
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background: #8c52ff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
 }
 
-nav ul li a:hover::after{
-    width: 100%;
+nav ul li a:hover::after {
+  width: 100%;
 }
 
-#words{
-    padding: 80px 0;
-    color: #ababab;
+#words {
+  padding: 80px 0;
+  color: #ababab;
 }
 
-.title{
-    color: #8c52ff;
+.title {
+  color: #8c52ff;
 }
 
 .section {
-    margin-left: 30px;
-    padding-bottom: 10px;
+  margin-left: 30px;
+  padding-bottom: 10px;
 }
 
-.list-contents ol li{
-    margin-left: 50px;
+.list-contents ol li {
+  margin-left: 50px;
 }
 
-.list-contents{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.list-contents {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.resize{
-    width: 400px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px 0;
+.resize {
+  width: 400px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
 }
 
-.btn{
-    display: block;
-    margin: 10px 0;
-    width: fit-content;
-    border: 1px solid #8c52ff;
-    padding: 14px 50px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #ababab;
-    transition: background 0.5s;
+.btn {
+  display: block;
+  margin: 10px 0;
+  width: fit-content;
+  border: 1px solid #8c52ff;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #ababab;
+  transition: background 0.5s;
 }
 
-.btn:hover{
-    background: #8c52ff;
+.btn:hover {
+  background: #8c52ff;
 }
 
-#portfolio{
-    padding: 25px 0;
+#portfolio {
+  padding: 25px 0;
 }
 
-.container{
-    padding: 10px 2%;
+.container {
+  padding: 10px 2%;
 }
 
-.pinball-list{
-    display: grid;
-    grid-gap: 50px;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-template-rows: repeat(1, minmax(200px, 1fr));
-    margin-top: 15px;
-    margin-bottom: 15px;
+.pinball-list {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: repeat(1, minmax(200px, 1fr));
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.work{
-    position: relative;
-    overflow: hidden;
- }
-
-h3{
-    color: #fff;
-    margin-left: 10px;
+p {
+  margin-bottom: 1.2em; /* or try 1.5em for more spacing */
+  line-height: 1.6; /* improves readability */
 }
 
-.pics{
-    color: #fff;
+.work {
+  position: relative;
+  overflow: hidden;
+}
+
+h3 {
+  color: #fff;
+}
+
+.pics {
+  color: #fff;
 }
 
 .work-words {
-    margin-left: 10px;
-    color: #fff;
+  margin-left: 10px;
+  color: #fff;
 }
 
-.img{
-    width: 100%;
+.img {
+  width: 100%;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 1em;
+}
 
+th,
+td {
+  border: 1px solid #aaa;
+  padding: 0.6em 1em;
+  text-align: left;
+}
 
+th {
+  background-color: #222;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+ol,
+ul {
+  line-height: 1.8; /* or use px like 28px */
+}
