@@ -1,44 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="projectpage.css">
-    <title>Garage</title>
-</head>
-<body>
-
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/Nicholas Drazso - LOGO GREY.png" class="logo">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#portfolio">Projects</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garage / Personal Shop — Nicholas Drazso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="project-nav">
+      <div class="container">
+        <div class="project-nav-inner">
+          <a href="archive.html" class="back-link">← Earlier Work</a>
         </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="project-header">
+      <div class="container">
+        <span class="project-tag">Personal &nbsp;·&nbsp; Ongoing</span>
+        <h1 class="project-title">Garage / Personal Shop</h1>
+        <p class="project-oneliner">A 28&prime; × 30&prime; shop buildout — machine shop, welding station, car lift, and rapid prototyping. In progress.</p>
+        <div class="project-meta-row">
+          <div class="project-meta-item">
+            <span class="meta-label">Status</span>
+            <span class="meta-value">Ongoing</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Designer &amp; Builder</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">28&prime; × 30&prime;</span>
+          </div>
+        </div>
+        <div class="project-hero-img">
+          <img src="images/Garage/Garage Cover.jpg" alt="Garage and personal shop" />
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="project-body">
+      <div class="container">
+
+        <!-- Context -->
+        <div class="project-section">
+          <span class="project-section-label">The Vision</span>
+          <p>
+            A 28&prime; × 30&prime; garage being built out into a space meant purely for creating. Once complete it will
+            house a full machine shop, welding station, car lift, and rapid prototyping station — somewhere you can
+            go and build anything you want.
+          </p>
+          <p>Plenty of progress since this photo; a fuller write-up and more pictures are on the way.</p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- FOOTER NAV -->
+    <div class="container">
+      <div class="project-footer-nav">
+        <a href="archive.html" class="project-nav-link">← Earlier Work</a>
+        <a href="index.html#work" class="project-nav-link">All Work →</a>
+      </div>
     </div>
 
-    <div id="words">
-        <div class="section">
-            <h1 class="title">Garage/Personal Shop</h1>
-            <p>
-            This is a 28' x 30' garage/shop. This is a space that will be meant for creating. 
-            Once complete, there will be a full machine shop, welding station, car lift, and rapid prototyping station. 
-            My hope is that this area is somewhere that you can go to create anything you want. There has been lots of work done since this picture but more pictures will be added later.
-
-            A further write up is in progress.
-            </p>
-
-            <img class="resize" src="images/Garage/Garage Cover.jpg">
-
-        </div>
-
-    </div>
-
-</body>
+  </body>
 </html>

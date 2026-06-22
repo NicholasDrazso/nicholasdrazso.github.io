@@ -2,97 +2,143 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="projectpage.css" />
-    <title>PB Solutions</title>
+    <title>PB Solutions — Nicholas Drazso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="header">
+    <!-- NAV -->
+    <nav class="project-nav">
       <div class="container">
-        <nav>
-          <img src="images/Nicholas Drazso - LOGO GREY.png" class="logo" />
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#portfolio">Projects</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
-    <div id="words">
-      <div class="section">
-        <h1 class="title">PB Solutions</h1>
-        <p>
-          Page under construction. I loved tinkering and troubleshooting with my
-          own paintball equipment and couldnt afford to get it repaired by other
-          companies so I learned to do it myself. I became pretty good at it and
-          realized there was an opportunity to start servicing other peoples
-          equipment and make money. I approached my local field and started
-          doing it there when I was 11 then after about 1 season it really blew
-          up and I started to make a name for myself. I then upgraded to bigger
-          fields and bigger events and got some friends and trained them as
-          employees. After 2 seasons, at 14 years old, I was servicing events up
-          to 1000 people with 3 employees under a tent. It became pretty
-          successful until COVID shut down most of the fields within a 3h drive
-          and I got busy with university, so I officially stopped around 2019
-          but this was my first taste of real entrepreneurship and it made me
-          realize how in love with this I was! In the future I hope to follow a
-          passion of mine and make my own company around it!
-        </p>
-        <br />
-        <p>
-          I need to find pictures of my tent setup but you can picture a desk
-          with a trailer and a pop up tent and a banner with my company name on
-          it with some tables and testing equipment nearby.
-        </p>
-        <br />
-        <p>
-          Here are some pictures including my team which I point out with the
-          red arrows. We not only did repairs, but we played and were usually in
-          key leadership positions even though we were younger. We gained the
-          respect of everyone over the years and we were helping to create a
-          tight community and we were successful at it. We were even featured in
-          a paintball magazine from Quebec! This community is where I
-          strengthened my ability to work in a team in high stress environments.
-          Below are pictures of us playing and with some trophies! I could add
-          another 100+ pictures, but we would be here forever haha.
-        </p>
-
-        <div class="pinball-list">
-          <div class="work">
-            <img class="img" src="images/Paintball/team.JPG" />
-            <h3>Team Pic</h3>
-            <p class="work-words"></p>
-          </div>
-
-          <div class="work">
-            <img class="img" src="images/Paintball/trophy1.JPG" />
-            <h3>Trophy Pic with team 1</h3>
-            <p class="work-words"></p>
-          </div>
-
-          <div class="work">
-            <img class="img" src="images/Paintball/trophy2.JPG" />
-            <h3>Trophy Pic with team 2</h3>
-            <p class="work-words"></p>
-          </div>
-
-          <div class="work">
-            <img class="img" src="images/Paintball/running.JPG" />
-            <h3>Playing 1</h3>
-            <p class="work-words"></p>
-          </div>
-
-          <div class="work">
-            <img class="img" src="images/Paintball/smoke.JPG" />
-            <h3>Playing 2</h3>
-            <p class="work-words"></p>
-          </div>
+        <div class="project-nav-inner">
+          <a href="index.html#work" class="back-link">← All Work</a>
         </div>
       </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="project-header">
+      <div class="container">
+        <span class="project-tag">Entrepreneurship</span>
+        <h1 class="project-title">PB Solutions</h1>
+        <p class="project-oneliner">A paintball marker repair business I started at age 11 — scaled to 3 employees servicing events of 1,000+ people.</p>
+        <div class="project-meta-row">
+          <div class="project-meta-item">
+            <span class="meta-label">Years</span>
+            <span class="meta-value">2011–2019</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Founder</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Team</span>
+            <span class="meta-value">3 employees</span>
+          </div>
+        </div>
+        <div class="project-hero-img">
+          <img src="images/Paintball/running.JPG" alt="PB Solutions — on the field" />
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="project-body">
+      <div class="container">
+
+        <!-- Context -->
+        <div class="project-section">
+          <span class="project-section-label">How It Started</span>
+          <p>
+            I loved tinkering with and troubleshooting my own paintball equipment, and couldn't afford to have it
+            repaired by other companies — so I learned to do it myself. I got good at it, realized other players
+            needed the same service, and started repairing equipment at my local field at age 11.
+          </p>
+          <p>
+            After a season it took off and I started to make a name for myself. I moved up to bigger fields and
+            bigger events, brought on friends, and trained them as employees. By 14, we were servicing events of up
+            to 1,000 people with 3 employees working out of a tent. It stayed successful until COVID shut down most
+            fields within a three-hour drive and university got busy, so I wound it down around 2019. It was my
+            first taste of real entrepreneurship — and it's where I realized how much I love this.
+          </p>
+        </div>
+
+        <!-- The team -->
+        <div class="project-section">
+          <span class="project-section-label">The Team &amp; Community</span>
+          <p>
+            We didn't just do repairs — we played, usually in key leadership positions despite being younger. Over
+            the years we earned the community's respect and helped build a tight, welcoming scene around the sport.
+            We were even featured in a paintball magazine out of Quebec. This is where I strengthened my ability to
+            work in a team under high-stress conditions.
+          </p>
+        </div>
+
+        <div class="img-grid img-grid--3">
+          <figure class="img-item">
+            <img src="images/Paintball/team.JPG" alt="The team" />
+            <figcaption>The team</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="images/Paintball/trophy1.JPG" alt="Trophy with team" />
+            <figcaption>Trophy with the team</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="images/Paintball/trophy2.JPG" alt="Trophy with team" />
+            <figcaption>Another podium finish</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="images/Paintball/running.JPG" alt="On the field" />
+            <figcaption>On the field</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="images/Paintball/smoke.JPG" alt="Gameplay" />
+            <figcaption>Gameplay</figcaption>
+          </figure>
+        </div>
+
+        <!-- Outcome -->
+        <div class="project-section">
+          <span class="project-section-label">Outcome</span>
+
+          <div class="outcome-stats">
+            <div class="stat">
+              <div class="stat-value">Age 11</div>
+              <div class="stat-label">Started the business</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Employees</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">1,000+</div>
+              <div class="stat-label">Event attendance served</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">8 yrs</div>
+              <div class="stat-label">In operation</div>
+            </div>
+          </div>
+
+          <p>
+            Featured in Quebec paintball media — and the experience that first showed me how much I love building
+            something of my own.
+          </p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- FOOTER NAV -->
+    <div class="container">
+      <div class="project-footer-nav">
+        <a href="Project - Trebuchet.html" class="project-nav-link">← Trebuchet</a>
+        <a href="index.html#work" class="project-nav-link">All Work →</a>
+      </div>
     </div>
+
   </body>
 </html>

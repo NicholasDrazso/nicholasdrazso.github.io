@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAR Robot — Nicholas Drazso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="project-nav">
+      <div class="container">
+        <div class="project-nav-inner">
+          <a href="../index.html#work" class="back-link">← All Work</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="project-header">
+      <div class="container">
+        <span class="project-tag">3rd Year &nbsp;·&nbsp; MTE 380</span>
+        <h1 class="project-title">Autonomous Search &amp; Rescue Robot</h1>
+        <p class="project-oneliner">1st of 17 teams. 131g, 13 seconds, 3/3 successful runs.</p>
+        <div class="project-meta-row">
+          <div class="project-meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value">2025</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Course</span>
+            <span class="meta-value">MTE 380 — Mechatronics Design</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Team Lead, Suction System, PCB Co-design</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Stack</span>
+            <span class="meta-value">KiCAD, C++, Pixy 2.1, Teensy 4.0</span>
+          </div>
+        </div>
+        <div class="project-hero-img">
+          <img src="../images/MTE 380/FINAL_front_of_bot.jpg" alt="SAR Robot — front view" />
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="project-body">
+      <div class="container">
+
+        <!-- Context -->
+        <div class="project-section">
+          <span class="project-section-label">Context &amp; Problem</span>
+          <p>
+            MTE 380: design a robot to autonomously retrieve a LEGO figure from a maze course and deliver it to
+            a drop-off zone. 17 teams, 3 months. Scored on a performance index:
+          </p>
+          <p><code class="formula">PI = C / (R × m × t²)</code></p>
+          <p>
+            The formula penalizes mass and time squared, making every gram and every second worth fighting over.
+            Reliability also matters: three successful runs earns a 0.75 multiplier vs. 1.0 for a single run.
+          </p>
+        </div>
+
+        <!-- Approach -->
+        <div class="project-section">
+          <span class="project-section-label">Approach</span>
+          <p>
+            <strong>PCB as chassis.</strong> Instead of mounting electronics on a 3D-printed frame, the PCB is the
+            frame. A 4-layer KiCAD board provides structure while integrating all electronics:
+          </p>
+          <ul>
+            <li>Teensy 4.0 MCU (SPI to Pixy 2.1)</li>
+            <li>2× DRV8871 motor drivers</li>
+            <li>LM22670 5V/5A buck converter</li>
+            <li>FET drivers for fan motor and gripper servo</li>
+            <li>Encoder signal traces routed on isolated layers to reduce noise</li>
+            <li>PCB cutouts for LEGO gripper mechanism and suction impeller clearance</li>
+          </ul>
+          <p>
+            <strong>Why the Teensy 4.0.</strong> Its 600&nbsp;MHz Cortex-M7 left ample headroom to run the PD control
+            loop while streaming Pixy 2.1 vision data over SPI without dropping cycles &mdash; an Arduino-class ATmega
+            would have bottlenecked the loop. It also exposed the hardware SPI, PWM, and encoder-capable pins needed for
+            the motor drivers, servo, and fan FETs, all in a footprint light enough to matter under a mass-squared
+            performance index. We didn't need onboard wireless (the main draw of an ESP32), so Bluetooth was added as a
+            separate module only on V2, where live debug was worth the weight.
+          </p>
+          <p>
+            Power: 2× 3.7V LiPo in series (7.4V nominal, 6g each). Battery sizing from component power budgets:
+          </p>
+          <p><code class="formula">I<sub>bat</sub> = P<sub>total</sub> / V<sub>bat</sub> = 36.197 / 7.4 = 4.89 A</code></p>
+          <p><code class="formula">Capacity = I<sub>bat</sub> &times; t<sub>run</sub> = 4.89 &times; (360 / 3600) = 489 mAh</code></p>
+          <p>C-rating selection for 4.3A peak draw across candidate cell sizes:</p>
+          <table>
+            <thead>
+              <tr><th>Cell capacity</th><th>Min C-rating required</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>500 mAh</td><td>9C</td></tr>
+              <tr><td>1000 mAh</td><td>5C</td></tr>
+              <tr><td>2000 mAh</td><td>2C</td></tr>
+              <tr><td>3000 mAh</td><td>1.5C</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Tradeoff: lower capacity + higher C-rating handles peak current bursts but limits runtime;
+            higher capacity + lower C-rating lasts longer but sags under peak loads. Used leaded solder
+            on the final board for fatigue resistance against vibration.
+          </p>
+          <p>
+            <strong>Control architecture.</strong> Deterministic state machine: line-follow → figure-detect → pickup
+            → deliver → stop. PD controller uses the Pixy 2.1 vector offset from frame center as the error signal.
+            Chose PD over PID; steady-state error was negligible and I-term integration would add lag at speed.
+            Built separate Pixy signature configs for indoor vs. outdoor ambient lighting variations.
+          </p>
+          <p>
+            <strong>Wheels.</strong> Custom silicone (A20 durometer) cast in 3D-printed molds. Early ribbed-rim
+            versions introduced lateral tracking instability that made PD tuning inconsistent. Switched to smooth
+            rims. Tracking improved significantly. μ ≈ 1.2 measured via ramp-slip test (tan θ at slip onset).
+          </p>
+        </div>
+
+        <!-- Robot photos -->
+        <div class="img-grid img-grid--3">
+          <figure class="img-item">
+            <img src="../images/MTE 380/FINAL_back_of_bot.jpg" alt="Robot — back" />
+            <figcaption>Back</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/FINAL_side_of_bot.jpg" alt="Robot — side" />
+            <figcaption>Side</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/FINAL_top_of_bot.jpg" alt="Robot — top" />
+            <figcaption>Top</figcaption>
+          </figure>
+        </div>
+
+        <!-- Implementation -->
+        <div class="project-section">
+          <span class="project-section-label">Implementation — Key Contributions</span>
+          <p>
+            <strong>Suction downforce.</strong> Cornering speed without artificial downforce is bounded by
+            <code class="formula">v_max = √(μrg)</code>. Adding suction increases normal force without adding
+            driven mass, improving the speed term in the PI formula without the mass penalty.
+          </p>
+          <p>
+            Parameterized impeller design across 8 variables: blade count (2–14), blade pitch (15–35mm),
+            curvature (45–60°), diameter (12–30mm), height (10–15mm), cut shape, impeller style, and skirt
+            geometry. 3D-printed 70 variants; each tested on a ramp fixture at fixed 5V/0.5A, 5 timed runs
+            per variant.
+          </p>
+
+          <table>
+            <thead>
+              <tr><th>Configuration</th><th>Avg ramp time</th><th>Relative traction</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>No fan (baseline)</td><td>0.84s</td><td>1×</td></tr>
+              <tr><td>Compression, 5-blade</td><td>21.1s</td><td>25×</td></tr>
+              <tr><td>Radial, 5-blade (final)</td><td>55.1s</td><td>65×</td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            Theoretical cornering speed improvement: 1.33 → 1.40 m/s (+5%). Cut 3 days before competition. Last-minute motor vendor substitution disrupted the power budget and caused intermittent failures
+            in the Pixy and gripper systems. Right call: the last 72 hours needed all five team members
+            focused on full-course reliability.
+          </p>
+        </div>
+
+        <!-- Suction testing media -->
+        <div class="img-grid img-grid--3">
+          <figure class="img-item">
+            <video controls src="../images/MTE 380/SUCTION_concept_test.MOV"></video>
+            <figcaption>Suction concept test — ramp fixture</figcaption>
+          </figure>
+          <figure class="img-item">
+            <video controls src="../images/MTE 380/SUCTION_testing_setup.MOV"></video>
+            <figcaption>Impeller testing setup — fixed 5V/0.5A</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/SUCTION_impeller_iterations.jpg" alt="70 impeller variants" />
+            <figcaption>70 3D-printed impeller variants</figcaption>
+          </figure>
+        </div>
+
+        <div class="project-section">
+          <p>
+            <strong>Gripper.</strong> Servo-actuated arm, 15 design iterations. Final version: foam dampening
+            to absorb vibration noise, sloped LEGO backboard to prevent figure snagging during high-speed
+            approach. A "jitter" pulse (high PWM for 20ms) allowed precision movement in the sub-60/255 PWM
+            range where the motors stall under load.
+          </p>
+          <p>
+            <strong>PCB debug.</strong> V1 board had a floating servo ground pin causing unpredictable behavior.
+            Systematically traced from known-good pins outward until the fault was isolated. V2 board added a
+            Bluetooth module for live serial debug without the data-logging overhead that was starving the
+            control loop on V1.
+          </p>
+          <p>
+            <strong>Rules insight.</strong> Only team to stop at the nearest green drop-off zone rather than
+            returning to origin; the rules allowed it. Saved meaningful time in every run.
+          </p>
+        </div>
+
+        <!-- PCB and suction images -->
+        <div class="img-grid img-grid--3">
+          <figure class="img-item">
+            <img src="../images/MTE 380/ELECTRICAL_PCB_block_diagram.png" alt="PCB block diagram" />
+            <figcaption>PCB block diagram</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/SUCTION_skirt_iterations.jpg" alt="Suction skirt iterations" />
+            <figcaption>Suction skirt — printed iterations</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/Final_PCB_no_teensy.jpg" alt="PCBA without Teensy" />
+            <figcaption>PCBA (Teensy not yet installed)</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/statemachine.png" alt="State machine diagram" />
+            <figcaption>High-level state machine</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/SUCTION_radial_cad.png" alt="5-blade radial impeller" />
+            <figcaption>Final 5-blade radial impeller — CAD</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/SUCTION_skirt_CAD.png" alt="Suction skirt CAD" />
+            <figcaption>Suction skirt — 3D-printed, low infill</figcaption>
+          </figure>
+        </div>
+
+        <!-- Outcome -->
+        <div class="project-section">
+          <span class="project-section-label">Outcome</span>
+
+          <div class="outcome-stats">
+            <div class="stat">
+              <div class="stat-value">131g</div>
+              <div class="stat-label">Robot mass</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">13.0s</div>
+              <div class="stat-label">Mission time</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">3/3</div>
+              <div class="stat-label">Successful runs</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">68×</div>
+              <div class="stat-label">Above 2nd place</div>
+            </div>
+          </div>
+
+          <p>First place in MTE 380 with a performance index 68× higher than the second-place team.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Weight</td><td>131g</td></tr>
+              <tr><td>Mission time</td><td>13.0 s</td></tr>
+              <tr><td>Size</td><td>114 × 86 mm</td></tr>
+              <tr><td>Reliability</td><td>3/3 successful runs</td></tr>
+              <tr><td>PI vs. 2nd place</td><td>68×</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Wheel mold images -->
+        <div class="img-grid img-grid--3">
+          <figure class="img-item">
+            <img src="../images/MTE 380/MECHANICAL_wheel_top.png" alt="Wheel mold — top" />
+            <figcaption>Silicone wheel mold — top</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/MECHANICAL_rim.png" alt="Wheel rim — 21mm OD" />
+            <figcaption>PLA rim — 21mm OD, 17mm rim OD</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/MTE 380/MECHANICAL_enclosure_bottom.png" alt="Mold enclosure" />
+            <figcaption>Mold enclosure — alignment cutouts and overflow lip</figcaption>
+          </figure>
+        </div>
+
+        <!-- Results image -->
+        <div class="img-grid img-grid--1">
+          <figure class="img-item">
+            <img src="../images/MTE 380/RESULTS_including_team_5.png" alt="Competition results" />
+            <figcaption>Competition results — all 17 teams</figcaption>
+          </figure>
+        </div>
+
+        <!-- Videos -->
+        <div class="project-section">
+          <span class="project-section-label">Competition Runs</span>
+          <p>Best run (13s) and the 360° robot walkthrough.</p>
+        </div>
+
+        <div class="img-grid img-grid--3">
+          <figure class="img-item">
+            <video controls src="../images/MTE 380/RUN_13_s.mov"></video>
+            <figcaption>13s run — best</figcaption>
+          </figure>
+          <figure class="img-item">
+            <video controls src="../images/MTE 380/RUN_15_s.mov"></video>
+            <figcaption>15s run — scored run</figcaption>
+          </figure>
+          <figure class="img-item">
+            <video controls src="../images/MTE 380/FINAL_360.MOV"></video>
+            <figcaption>360° robot walkthrough</figcaption>
+          </figure>
+        </div>
+
+        <!-- Download -->
+        <div class="project-section">
+          <span class="project-section-label">Downloads</span>
+          <p>Technical report includes detailed design analysis, full impeller test data, PCB schematics, and state machine documentation.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="../images/MTE 380/ELECTRICAL_schematics.pdf" download class="download-btn">Download Schematics ↓</a>
+            <a href="../images/MTE 380/MTE380_FinalReport.pdf" download class="download-btn">Download Full Report ↓</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- FOOTER NAV -->
+    <div class="container">
+      <div class="project-footer-nav">
+        <a href="electrans.html" class="project-nav-link">← Electrans</a>
+        <a href="botbuilt.html" class="project-nav-link">BotBuilt →</a>
+      </div>
+    </div>
+
+  </body>
+</html>

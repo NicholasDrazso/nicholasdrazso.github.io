@@ -2,36 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="projectpage.css" />
-    <title>Woodworking</title>
+    <title>Custom Woodworking — Nicholas Drazso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="header">
+    <!-- NAV -->
+    <nav class="project-nav">
       <div class="container">
-        <nav>
-          <img src="images/Nicholas Drazso - LOGO GREY.png" class="logo" />
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#portfolio">Projects</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </nav>
+        <div class="project-nav-inner">
+          <a href="archive.html" class="back-link">← Earlier Work</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="project-header">
+      <div class="container">
+        <span class="project-tag">Maker</span>
+        <h1 class="project-title">Custom Woodworking</h1>
+        <p class="project-oneliner">Laser-engraved pens and live-edge tables — early exploration of fabrication and custom furniture.</p>
+        <div class="project-meta-row">
+          <div class="project-meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value">2019</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Maker</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">Custom furniture</span>
+          </div>
+        </div>
+        <div class="project-hero-img">
+          <img src="images/Woodworking/Woodshop Cover.jpg" alt="Woodworking shop" />
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="project-body">
+      <div class="container">
+
+        <!-- Context -->
+        <div class="project-section">
+          <span class="project-section-label">Overview</span>
+          <p>
+            Custom wooden pieces — laser-engraved pens and live-edge tables among them — exploring fabrication and
+            custom furniture at a small scale. More pictures to be added.
+          </p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- FOOTER NAV -->
+    <div class="container">
+      <div class="project-footer-nav">
+        <a href="archive.html" class="project-nav-link">← Earlier Work</a>
+        <a href="index.html#work" class="project-nav-link">All Work →</a>
       </div>
     </div>
 
-    <div id="words">
-      <div class="section">
-        <h1 class="title">Woodworking</h1>
-        <p>
-          I made custom wooden engraved pens and other wood furniture pieces
-          including live edge tables. Pictures to be added.
-        </p>
-
-        <img class="resize" src="images/Woodworking/Woodshop Cover.jpg" />
-      </div>
-    </div>
   </body>
 </html>

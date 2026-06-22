@@ -2,412 +2,350 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nicholas Drazso Website</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/cba55568e9.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>Nicholas Drazso — Mechatronics Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="header">
+    <!-- NAV -->
+    <nav class="nav">
       <div class="container">
-        <nav>
-          <img src="images/Nicholas Drazso - LOGO BLACK.png" class="logo" />
-          <ul>
-            <li><a href="#header">Home</a></li>
+        <div class="nav-inner">
+          <a href="#hero" class="nav-logo">Nicholas Drazso</a>
+          <ul class="nav-links">
+            <li><a href="#work">Work</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-        </nav>
-        <div class="header-text">
-          <h1>Hi, I'm a <span>Creator</span></h1>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <!--------about---------->
-    <div id="about">
+    <!-- HERO -->
+    <section id="hero">
       <div class="container">
-        <div class="row">
-          <div class="about-col-1">
-            <img src="images/bull.JPG" />
-          </div>
-          <div class="about-col-2">
-            <h2 class="sub-title">About Me</h2>
-            <p>
-              I am a 4th year Mechatronics Engineering Student at the University
-              of Waterloo but I am also a 2 time founder with 5 internships
-              completed (currently doing #6) and I am also a design team lead. I
-              am passionate about humanoid robotics and mechatronics
-              specifically because it is a multidisplinary field where I can use
-              a mix of skills to come up with creative solutions to complex
-              problems. I love the idea of there not being a textbook or 10000
-              versions of something done before to copy off of, and I must use
-              first principles or a series of educated guesses followed with
-              testing to come up with solutions. I love to build, create, and I
-              have a passion for entrepreneurship/startups.
+        <div class="hero-top">
+          <div class="hero-text">
+            <p class="hero-eyebrow">Mechatronics Engineer &nbsp;·&nbsp; University of Waterloo</p>
+            <h1 class="hero-name">Nicholas<br>Drazso</h1>
+            <p class="hero-tagline">
+              Giving it <span class="accent">11/10</span>.
             </p>
-            <br />
-            <p>
-              I am currently looking for full time work or a 7th and final
-              internship which will hopefully be in the field of actuator
-              design, sensor design, or design/testing for novel systems. Please
-              download my resume and/or take a look at my projects, businesses,
-              and past internships below then reach out and lets talk about how
-              we can change the world together!
-            </p>
-
-            <div class="social-icons">
-              <a href="mailto:nick.drazso@gmail.com"
-                ><i class="fa-solid fa-envelope"></i> nick.drazso@gmail.com</a
-              >
-              <a href="https://www.linkedin.com/in/nicholasdrazso/"
-                ><i class="fa-brands fa-linkedin"></i> Nicholas Drazso</a
-              >
-            </div>
-            <a
-              href="images/Nicholas Drazso Resume.pdf"
-              download
-              class="btn btn2"
-              >Download Resume</a
-            >
-            <!-- 
-            <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('experience')">
-                Experience
-              </p>
-              <p class="tab-links" onclick="opentab('education')">Education</p>
-            </div>
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li>
-                  <span>Mechanical</span><br />
-                  <ol>
-                    <li>CATIA 3DX</li>
-                    <li>Solidworks</li>
-                    <li>GD&T</li>
-                    <li>DFM</li>
-                    <li>Sheet Metal Design</li>
-                  </ol>
-                </li>
-
-                <li>
-                  <span>Electrical</span><br />
-                  <ol>
-                    <li>Altium</li>
-                    <li>PCB Assembly</li>
-                    <li>CAN</li>
-                    <li>SPI</li>
-                    <li>I2C</li>
-                    <li>Wire Harnesses Design</li>
-                    <li>Soldering</li>
-                  </ol>
-                </li>
-
-                <li>
-                  <span>Software</span><br />
-                  <ol>
-                    <li>C++</li>
-                    <li>Python</li>
-                    <li>MATLAB</li>
-                    <li>SIMULINK</li>
-                    <li>LINUX</li>
-                  </ol>
-                </li>
-
-                <li>
-                  <span>Prototyping</span><br />
-                  <ol>
-                    <li>3D Printing</li>
-                    <li>Arduino</li>
-                    <li>Raspberry Pi</li>
-                    <li>Machining</li>
-                    <li>Welding</li>
-                  </ol>
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="experience">
-              <ul>
-                <li>
-                  <span>Electrans, Mechatronics Engineering Intern</span
-                  ><br />Developed custom bed of nails test fixture and did
-                  other mechtronics R&D
-                </li>
-                <li>
-                  <span>Tesla, Test Equipment Design Engineering Intern</span
-                  ><br />Developed cell testing equipment for cell R&D
-                </li>
-                <li>
-                  <span>BotBuilt, Mechanical Engineer</span><br />Robotic
-                  construction Y-Combinator start up
-                </li>
-                <li>
-                  <span>Pure Technologies, Mechatronics Engineer</span
-                  ><br />Pipeline inspection robot R&D
-                </li>
-                <li>
-                  <span>EM Dynamics, Mechanical Engineer</span><br />Custom
-                  industrial and artistic sheet metal projects
-                </li>
-                <li>
-                  <span>Lardale Construction, Crew Lead</span><br />Crew lead
-                  for a construction company
-                </li>
-                <li>
-                  <span>PB Solutions+, Founder</span><br />Paintball gun
-                  servicing company
-                </li>
-                <li>
-                  <span>Nicks Custom Woodworking, Founder</span><br />Custom
-                  wooden pens and live edge tables
-                </li>
-                <li>
-                  <span>UW DeepBlue, Mechanical Team Lead</span><br />Leading
-                  team of 8 to design underwater autonomous submarine for 2025
-                  Robosub Competition
-                </li>
-                <li>
-                  <span>Waterloop, Mechanical Engineer</span><br />Hyperloop
-                  student design team
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="education">
-              <ul>
-                <li>
-                  <span>2019 - Current | University of Waterloo</span
-                  ><br />Mechatronics Engineering
-                </li>
-                <li>
-                  <span>2015 - 2019 | R.S. McLaughlin CVI</span><br />Honours
-                  Graduate
-                </li>
-              </ul>
-            </div> -->
+          </div>
+          <div class="hero-portrait">
+            <img src="images/LIDDE pitch.jfif" alt="Nicholas Drazso" />
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">2× Tesla</span>
+            <span class="hero-stat-label">Intern</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">Co-founder</span>
+            <span class="hero-stat-label">LIDDE Loupes</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">2+&nbsp;yrs</span>
+            <span class="hero-stat-label">Industry Experience (Electrical + Mechanical)</span>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-----------portfolio-->
-    <div id="portfolio">
+    <!-- WORK -->
+    <section id="work">
       <div class="container">
-        <h2 class="sub-title">Projects</h2>
-
-        <div class="work-list">
-          <div class="work">
-            <img src="images/MTE 380/FINAL_front_of_bot.jpg" />
-            <div class="layer">
-              <h3>Project - Autonomous Search and Rescue Robot</h3>
-              <p>Micro line following robot</p>
-              <a href="Project - Autonomous Search and Rescue Robot .html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Bed of Nails/Fixture front - up.png" />
-            <div class="layer">
-              <h3>Internship - Electrans Projects</h3>
-              <p>Custom bed of nails test fixture and sensor R&D</p>
-              <a href="Internship - Electrans Projects.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img
-              src="images/Botbuilt Projects/new build/Botbuilt - Input table in progress.png"
-            />
-            <div class="layer">
-              <h3>Internship - BotBuilt Projects</h3>
-              <p>Various Projects from my Robotics Co-op</p>
-              <a href="Internship - Botbuilt Projects.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Paintball/running.JPG" />
-            <div class="layer">
-              <h3>Business - PB Solutions</h3>
-              <p>Paintball Marker Repair Business</p>
-              <a href="Business - PB Solutions.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Woodworking/Woodshop Cover.jpg" />
-            <div class="layer">
-              <h3>Business - Woodworking</h3>
-              <p>Woodworking and Custom Wooden Pens Business</p>
-              <a href="Business - Woodworking.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/DeepBlue/Octohull.png" />
-            <div class="layer">
-              <h3>Design Team - DeepBlue</h3>
-              <p>
-                Mechanical Lead - Underwater Autonomous Vehicle Student Design
-                Team
-              </p>
-              <a href="Design Team - DeepBlue.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/waterloop/assembly view.png" />
-            <div class="layer">
-              <h3>Design Team - Waterloop</h3>
-              <p>Mechanical Member - Hyperloop Student Student Design Team</p>
-              <a href="Design Team - Waterloop.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Potentiometer/Finished Potentiometer.jpg" />
-            <div class="layer">
-              <h3>Project - Potentiometer</h3>
-              <p>Designed, built, and calibrated a linear potentiometer</p>
-              <a href="Project - Potentiometer.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Pinball/Pinball Cover.jpg" />
-            <div class="layer">
-              <h3>Project - Pinball Machine</h3>
-              <p>A multigame mode fully functioning pinball machine</p>
-              <a href="Project - Pinball.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Garage/Garage Cover.jpg" />
-            <div class="layer">
-              <h3>Project - Garage</h3>
-              <p>Built a 28' x 30' garage</p>
-              <a href="Project - Garage.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Deadlift Jack/deadlift jack take2.jpg" />
-            <div class="layer">
-              <h3>Project - Deadlift Jack</h3>
-              <p>Designed and built a deadlift bar jack for the gym</p>
-              <a href="Project - Deadlift Jack.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Trebuchet/Trebuchet Cover.jpg" />
-            <div class="layer">
-              <h3>project - Trebuchet</h3>
-              <p>Built a trebuchet that launches a tennis ball 100m</p>
-              <a href="Project - Trebuchet.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Bottle Rocket/bottle rocket cover.jpg" />
-            <div class="layer">
-              <h3>Project - Bottle Rocket</h3>
-              <p>
-                Designed, built, and demonstrated a pop bottle rocket with a
-                parachute system
-              </p>
-              <a href="Project - Bottle Rocket.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="work">
-            <img src="images/Model Eye/model eye cover.jpg" />
-            <div class="layer">
-              <h3>Project - Model Eye</h3>
-              <p>Designed and built a replica human eye for science class</p>
-              <a href="Project - Model Eye.html"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
-            </div>
-          </div>
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <span class="section-label">Work</span>
         </div>
-      </div>
-    </div>
 
-    <!-----------Contact-->
-    <div id="contact">
+        <ul class="work-list">
+
+          <!-- LIDDE Loupes — external, no repo image (branded placeholder) -->
+          <li class="work-item">
+            <a href="https://lidde-loupes.github.io/" target="_blank" rel="noopener">
+              <div class="work-thumb">
+                <img src="images/LIDDE/lidde render.png" alt="LIDDE Loupes" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2025 &nbsp;·&nbsp; Startup</span>
+                <h2 class="card-title">LIDDE Loupes ↗</h2>
+                <p class="card-meta">Co-founder &amp; Technical Lead</p>
+                <ul class="card-bullets">
+                  <li>Real-time vision wearable for surgical and dental procedures</li>
+                  <li>System architecture across mechanical, high-speed PCB, vision, and power</li>
+                  <li>$25k non-dilutive funding, 20+ LOIs from surgeons and dentists</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!-- Tesla HV Battery — confidential, non-clickable -->
+          <li class="work-item work-item--static">
+            <div class="work-static">
+              <div class="work-thumb work-thumb--logo">
+                <img src="images/tesla logo.png" alt="Tesla" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2025 &nbsp;·&nbsp; Internship</span>
+                <h2 class="card-title">Tesla — HV Battery</h2>
+                <p class="card-meta">HV Battery Test Development Engineer</p>
+                <ul class="card-bullets">
+                  <li>Led a DoE validating a $10k manual HV bolted-joint test method, avoiding a $500k automated system — 83% yield gain, new test standard</li>
+                  <li>Reduced false-pass and escape risk in leak testing with custom hardware + software tools</li>
+                  <li>Optimized testing from cell to pack level via simulation and hands-on electrical, thermal, and leak validation</li>
+                </ul>
+                <p class="work-note">Work is confidential — details above reflect résumé highlights only.</p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Tesla Cell R&D — confidential, non-clickable -->
+          <li class="work-item work-item--static">
+            <div class="work-static">
+              <div class="work-thumb work-thumb--logo">
+                <img src="images/tesla logo.png" alt="Tesla" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2024 &nbsp;·&nbsp; Internship</span>
+                <h2 class="card-title">Tesla — Cell R&amp;D</h2>
+                <p class="card-meta">Cell R&amp;D Test Equipment Design</p>
+                <ul class="card-bullets">
+                  <li>Designed an EEPROM programming fixture (Pytest) enabling traceability of 10k+ PCBAs</li>
+                  <li>Launched a novel cell test fixture by root-causing failures across 6 design changes</li>
+                  <li>Cut thermocouple data visualization time 50% with a custom visualization app</li>
+                </ul>
+                <p class="work-note">Work is confidential — details above reflect résumé highlights only.</p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Electrans -->
+          <li class="work-item">
+            <a href="projects/electrans.html">
+              <div class="work-thumb">
+                <img src="images/Bed of Nails/Fixture front - up.png" alt="Bed-of-nails test fixture" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2024 &nbsp;·&nbsp; Internship</span>
+                <h2 class="card-title">Electrans</h2>
+                <p class="card-meta">Mechatronics Engineer</p>
+                <ul class="card-bullets">
+                  <li>Custom pogo-pin PCB + Raspberry Pi fixture for CAN board production testing</li>
+                  <li>Active lift system de-risked $200k in recurring driver damage</li>
+                  <li>80% connector cost reduction via PCBA layout optimization</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!-- SAR Robot -->
+          <li class="work-item">
+            <a href="projects/sar-robot.html">
+              <div class="work-thumb">
+                <img src="images/MTE 380/FINAL_front_of_bot.jpg" alt="Autonomous Search and Rescue Robot" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2025 &nbsp;·&nbsp; Project</span>
+                <h2 class="card-title">Autonomous Search &amp; Rescue Robot</h2>
+                <p class="card-meta">Mechatronics Engineer</p>
+                <ul class="card-bullets">
+                  <li>4-layer PCB chassis: Teensy 4.0, DRV8871 drivers, LM22670 regulator</li>
+                  <li>Pixy 2.1 vision + encoder-based PD control for line tracking</li>
+                  <li>131g, 13-second run, 3/3 successful runs</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!-- BotBuilt -->
+          <li class="work-item">
+            <a href="projects/botbuilt.html">
+              <div class="work-thumb">
+                <img src="images/Botbuilt Projects/new build/IMG_0001.png" alt="BotBuilt factory" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2022 &nbsp;·&nbsp; Internship</span>
+                <h2 class="card-title">BotBuilt — YC W22</h2>
+                <p class="card-meta">Mechatronics Engineer</p>
+                <ul class="card-bullets">
+                  <li>Led second factory build: 500+ 3D-printed parts, RTU installs, pneumatics</li>
+                  <li>Autonomous end-effector test fixture + 5 design changes for scalability</li>
+                  <li>Camera cleaning device: 6 iterations, pneumatic solution still in production</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!-- DeepBlue -->
+          <li class="work-item">
+            <a href="projects/deepblue.html">
+              <div class="work-thumb">
+                <img src="images/DeepBlue/Octohull.png" alt="DeepBlue hull design" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2024 &nbsp;·&nbsp; Design Team</span>
+                <h2 class="card-title">DeepBlue AUV</h2>
+                <p class="card-meta">Mechanical Lead</p>
+                <ul class="card-bullets">
+                  <li>Hull design + 4 electromechanical subsystems</li>
+                  <li>10 engineers, 12-month Robosub timeline</li>
+                  <li>Under 20% of competing teams' budgets</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!-- Solar Flare — Pinball -->
+          <li class="work-item">
+            <a href="Project - Pinball.html">
+              <div class="work-thumb">
+                <img src="images/Pinball/Pinball Cover.jpg" alt="Solar Flare pinball machine" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2022 &nbsp;·&nbsp; Project</span>
+                <h2 class="card-title">Solar Flare — Pinball Machine</h2>
+                <p class="card-meta">Designer</p>
+                <ul class="card-bullets">
+                  <li>Multi-game-mode autonomous pinball machine built in high school</li>
+                  <li>Designed the launch mechanism through 5 prototypes</li>
+                  <li>Boolean state machine for game logic</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!-- Linear Potentiometer -->
+          <li class="work-item">
+            <a href="Project - Potentiometer.html">
+              <div class="work-thumb">
+                <img src="images/Potentiometer/Finished Potentiometer.jpg" alt="Linear potentiometer" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2022 &nbsp;·&nbsp; Project</span>
+                <h2 class="card-title">Linear Potentiometer</h2>
+                <p class="card-meta">Designer</p>
+                <ul class="card-bullets">
+                  <li>Nichrome wire + copper wiper voltage divider for 0–10cm distance sensing</li>
+                  <li>±3cm accuracy across the sensing range</li>
+                  <li>Failure traced to contact oxidation and resistor non-homogeneity</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!-- Trebuchet -->
+          <li class="work-item">
+            <a href="Project - Trebuchet.html">
+              <div class="work-thumb">
+                <img src="images/Trebuchet/Trebuchet Cover.jpg" alt="Trebuchet" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2019 &nbsp;·&nbsp; Project</span>
+                <h2 class="card-title">Trebuchet</h2>
+                <p class="card-meta">Designer</p>
+                <ul class="card-bullets">
+                  <li>Whipper trebuchet launched a tennis ball 103m with 35 lbs of counterweight</li>
+                  <li>Won the class accuracy award with a direct-hit knock-down</li>
+                  <li>Iterated sling release timing for repeatable range</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!-- PB Solutions -->
+          <li class="work-item">
+            <a href="Business - PB Solutions.html">
+              <div class="work-thumb">
+                <img src="images/Paintball/running.JPG" alt="PB Solutions" />
+              </div>
+              <div class="work-content">
+                <span class="card-tag">2011–2019 &nbsp;·&nbsp; Business</span>
+                <h2 class="card-title">PB Solutions</h2>
+                <p class="card-meta">Founder</p>
+                <ul class="card-bullets">
+                  <li>Paintball marker repair business started at age 11</li>
+                  <li>Scaled to 3 employees serving events of 1,000+ people</li>
+                  <li>Featured in Quebec paintball media</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
       <div class="container">
-        <div class="row">
-          <div class="contact-left">
-            <h2 class="sub-title">Contact Me</h2>
-            <div class="social-icons">
-              <a href="mailto:ndrazso@uwaterloo.ca"
-                ><i class="fa-solid fa-envelope"></i> ndrazso@uwaterloo.ca</a
-              >
-              <a href="https://www.linkedin.com/in/nicholasdrazso/"
-                ><i class="fa-brands fa-linkedin"></i> Nicholas Drazso</a
-              >
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <span class="section-label">About</span>
+        </div>
+        <div class="about-grid">
+          <div class="about-photo">
+            <img src="images/tri_serious.jfif" alt="Nicholas Drazso" />
+          </div>
+          <div class="about-content">
+            <div class="about-bio">
+              <p>
+                Mechatronics engineer, new grad from Waterloo. Five years split between school and real
+                engineering: two terms at Tesla, four early-stage companies including a YC-backed robotics
+                startup, and co-founding LIDDE Loupes, a real-time vision wearable for surgeons and dentists.
+              </p>
+              <p>
+                I have depth in electrical and mechanical engineering with breadth in software and firmware.
+                I've worked on many problems that involve a solution across the whole technology stack, for both
+                R&amp;D and mass manufacturing, and I weigh business impact alongside the technical engineering
+                when necessary.
+              </p>
+              <p>
+                Looking for early-stage and/or high-ownership roles on hard physical technology: humanoids,
+                robotics, medtech, anything where the answer isn't obvious. I want to be in these industries in a
+                combined role spanning both mechanical and electrical engineering.
+              </p>
+              <p>
+                Outside engineering: training for my first Ironman, love playing sports especially hockey, and
+                always up for being outside, exploring, or trying something new whether that be an activity or food!
+              </p>
             </div>
-            <a
-              href="images/Nicholas Drazso Resume.pdf"
-              download
-              class="btn btn2"
-              >Download Resume</a
-            >
+
+            <a href="images/Nicholas Drazso Resume.pdf" download class="btn-outline">Resume <span class="dl-arrow">↓</span></a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <script>
-      var tablinks = document.getElementsByClassName("tab-links");
-      var tabcontents = document.getElementsByClassName("tab-contents");
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">03</span>
+          <span class="section-label">Contact</span>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:nick.drazso@gmail.com" class="contact-link">nick.drazso@gmail.com</a>
+          <a href="https://www.linkedin.com/in/nicholasdrazso/" target="_blank" rel="noopener" class="contact-link">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
 
-      function opentab(tabname) {
-        for (tablink of tablinks) {
-          tablink.classList.remove("active-link");
-        }
-        for (tabcontent of tabcontents) {
-          tabcontent.classList.remove("active-tab");
-        }
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <a href="archive.html" class="footer-archive">Earlier work ↗</a>
+          <span class="footer-copy">© 2026 Nicholas Drazso</span>
+        </div>
+      </div>
+    </footer>
 
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrans — Nicholas Drazso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="project-nav">
+      <div class="container">
+        <div class="project-nav-inner">
+          <a href="../index.html#work" class="back-link">← All Work</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="project-header">
+      <div class="container">
+        <span class="project-tag">Internship</span>
+        <h1 class="project-title">Electrans</h1>
+        <p class="project-oneliner">CAN board test fixture and active boom safety system for a commercial EV company.</p>
+        <div class="project-meta-row">
+          <div class="project-meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value">2024</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Mechatronics Design Intern</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Location</span>
+            <span class="meta-value">Oakville, ON</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Stack</span>
+            <span class="meta-value">Altium, Python/PyTest, Raspberry Pi 4</span>
+          </div>
+        </div>
+        <div class="project-hero-img">
+          <img src="../images/Bed of Nails/Fixture front - up.png" alt="Bed-of-nails fixture, press raised" />
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="project-body">
+      <div class="container">
+
+        <!-- Context -->
+        <div class="project-section">
+          <span class="project-section-label">Context &amp; Problem</span>
+          <p>
+            Two parallel problems: business-critical CAN PCBs needed reliable, repeatable testing at production
+            scale with a full data record per unit. Separately, drivers repeatedly forgot to raise the boom before
+            connecting trailers, a recurring ~$200k damage event with no automated safeguard.
+          </p>
+        </div>
+
+        <!-- Bed of nails -->
+        <div class="project-section">
+          <span class="project-section-label">Bed-of-Nails Test Fixture</span>
+          <p>
+            Designed a pogo-pin control PCB in Altium that interfaces as a hat on a Raspberry Pi 4. The board
+            supports three test categories per unit:
+          </p>
+          <ul>
+            <li>±12V power rails: pass/fail continuity and voltage level</li>
+            <li>CAN bus termination resistance: measured value within tolerance window</li>
+            <li>CAN communication: live message exchange confirming bus integrity</li>
+          </ul>
+          <p>
+            PyTest sequences each check, logs results with timestamp and unit ID to Google Sheets for full
+            traceability per PCBA at production scale. Chose PyTest for its error reporting granularity and
+            the ability to re-run individual failed cases without re-running the full suite.
+          </p>
+          <p>
+            Enclosure: off-the-shelf McMaster-Carr box (oversized by design to future-proof for additional
+            test points). 3D-printed swappable center plate per PCB variant, 3D-printed pressing plate to
+            protect DUT components. Modular by design, swapping boards under a minute.
+          </p>
+        </div>
+
+        <div class="img-grid img-grid--3">
+          <figure class="img-item">
+            <img src="../images/Bed of Nails/Fixture front - Down.png" alt="Fixture — press down" />
+            <figcaption>Press engaged</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/Bed of Nails/fixture back.png" alt="Fixture — back" />
+            <figcaption>Back — power and CAN connections</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/Bed of Nails/Bottom of press - in.png" alt="Pressing plate detail" />
+            <figcaption>3D-printed pressing plate</figcaption>
+          </figure>
+        </div>
+
+        <div class="img-grid">
+          <figure class="img-item">
+            <img src="../images/Bed of Nails/Front PCB 3D.png" alt="Control PCB — 3D front" />
+            <figcaption>Control PCB — 3D front view (Altium)</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/Bed of Nails/Back PCB 3D.png" alt="Control PCB — 3D back" />
+            <figcaption>Control PCB — 3D back view (Altium)</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/Bed of Nails/2d layout.png" alt="PCB 2D layout" />
+            <figcaption>2D layout</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/Bed of Nails/can resistance check.png" alt="CAN resistance check schematic" />
+            <figcaption>CAN termination resistance sense circuit</figcaption>
+          </figure>
+        </div>
+
+        <div class="project-section">
+          <a href="../images/Bed of Nails Pogo Board - Schematics.pdf" download class="download-btn">Download Schematics ↓</a>
+        </div>
+
+        <!-- Boom control -->
+        <div class="project-section">
+          <span class="project-section-label">Autonomous Boom Control</span>
+          <p>
+            Requirement: detect when the trailer angle exceeds 5° (2° threshold + safety margin) and automatically
+            raise the boom. The spec started at ±0.5° and migrated to ±0.1° mid-project, a requirement I
+            ultimately pushed back on.
+          </p>
+          <p>
+            Iterated through three approaches as the accuracy spec kept shifting:
+          </p>
+          <ol>
+            <li>
+              <strong>ADXL335 (3-axis analog).</strong> Smoothing algorithm over 20 samples, mounted at 45° to
+              maximize accuracy in the 35–55° range. Met original ±0.5° spec in 9 static + dynamic test cases
+              across two days. Team then moved the goalposts to ±0.1°.
+            </li>
+            <li>
+              <strong>Murata SCA830-D07 (single-axis SPI, automotive grade).</strong> No breakout board existed,
+              so I designed a custom PCB. During schematic review, another hardware failure occurred on the truck.
+            </li>
+            <li>
+              <strong>Binary proximity detection.</strong> Pushed back on the ±0.1° requirement as unjustifiable
+              for a binary safeguard. Designed two sheet metal brackets: sensor mount and target flag. When the
+              boom raises past threshold, sensor goes low. Simple, cheap, fast to deploy.
+            </li>
+          </ol>
+          <p>
+            Final solution communicates via CAN to the boom pump ECU, uses existing truck mounting holes, and
+            requires no additional enclosure. Prototype accuracy: ±0.5° static. A better answer to a simpler
+            requirement.
+          </p>
+        </div>
+
+        <div class="img-grid img-grid--3">
+          <figure class="img-item">
+            <img src="../images/Inclination Sensor/3 axis up close.png" alt="ADXL335 accelerometers" />
+            <figcaption>ADXL335 prototype — iteration 1</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/Inclination Sensor/zoomed out.png" alt="Proximity sensor mount — CAD" />
+            <figcaption>Proximity sensor mount — CAD</figcaption>
+          </figure>
+          <figure class="img-item">
+            <img src="../images/Inclination Sensor/prototype inclination.png" alt="Prototype mounted on truck" />
+            <figcaption>Prototype mounted on truck</figcaption>
+          </figure>
+        </div>
+
+        <!-- Outcome -->
+        <div class="project-section">
+          <span class="project-section-label">Outcome</span>
+
+          <div class="outcome-stats">
+            <div class="stat">
+              <div class="stat-value">±0.5°</div>
+              <div class="stat-label">Boom detection accuracy</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">$200k</div>
+              <div class="stat-label">Damage risk de-risked</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">80%</div>
+              <div class="stat-label">Connector cost reduction</div>
+            </div>
+          </div>
+
+          <p>
+            Bed-of-nails fixture in production use. Boom control deployed on trucks. Connector cost reduced 80%
+            via PCBA layout and overmold optimization, a separate scope item from the two main projects.
+          </p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- FOOTER NAV -->
+    <div class="container">
+      <div class="project-footer-nav">
+        <a href="../index.html#work" class="project-nav-link">← All Work</a>
+        <a href="sar-robot.html" class="project-nav-link">SAR Robot →</a>
+      </div>
+    </div>
+
+  </body>
+</html>
